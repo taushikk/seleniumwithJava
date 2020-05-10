@@ -1,0 +1,70 @@
+package com.testing.pageobjects.updatetodo;
+
+import static org.testng.Assert.assertTrue;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class UpdateToDoBasicTest {
+	String url = "http://localhost:8081/login";
+	WebDriver driver;
+	@BeforeTest
+	public void beforeTest() {
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+	}
+
+	@Test
+	public void loginPageObject() {
+		driver.get(url);
+
+		LoginPage page = PageFactory.initElements(driver, LoginPage.class);
+
+		// driver.findElement(By.id("name")).getAttribute("type");
+		System.out.println(page.textBox.getAttribute("type"));// text
+
+		// driver.findElement(By.id("password")).getAttribute("type");
+		System.out.println(page.password.getAttribute("type"));// password
+
+	}
+
+	@Test
+	public void updateToDo() {
+		driver.get(url);
+		LoginPage page = PageFactory.initElements(driver, LoginPage.class);
+
+		page.textBox.sendKeys("in28minutes");
+		page.password.sendKeys("dummy");
+		page.submitButton.submit();
+		
+		String welcomeMessagetext = driver.findElement(By.id("welcome-message")).getText();
+		assertTrue(welcomeMessagetext.contains("Welcome"));
+		driver.findElement(By.linkText("Click here")).click();
+		driver.findElement(By.id("update-10002")).click();
+		WebElement desc = driver.findElement(By.id("desc"));
+		desc.clear();
+		desc.sendKeys("Updated Description");
+		WebElement targetDate = driver.findElement(By.id("targetDate"));
+		targetDate.clear();
+		targetDate.sendKeys("09/05/2020");
+		driver.findElement(By.id("save")).submit();
+		String updatedDesc = driver.findElement(By.id("update-10002")).getText();
+		String updatedTargetDate = driver.findElement(By.id("targetdate-10002")).getText();
+		System.out.println(updatedDesc);
+		System.out.println(updatedTargetDate);
+
+	}
+
+	@AfterTest
+	public void afterTest() {
+		driver.quit();
+	}
+}

@@ -1,0 +1,11 @@
+package com.testing.webdriver.login;
+
+import org.testng.annotations.Test;
+
+import com.testing.webdriver.basics.AbstractChromeWebDriverTest;
+
+public class FirstWebApplicationLoginTest extends AbstractChromeWebDriverTest{
+  @Test
+  public void f() {
+  }
+}

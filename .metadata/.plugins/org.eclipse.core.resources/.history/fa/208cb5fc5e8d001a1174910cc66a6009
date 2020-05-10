@@ -1,0 +1,26 @@
+package com.testing.webdriver.basics;
+
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+public class FormElementRadioButtonTest extends AbstractChromeWebDriverTest {
+	String url = "http://localhost:8081/pages/forms.html";
+	@Test
+	public void readFromACheckBox() {
+		driver.get(url);
+		List<WebElement> options = driver.findElements(By.name("optionsRadios"));
+		for(WebElement option:options) {
+			System.out.println(option.getAttribute("value") + " " + option.isSelected());
+		}
+		
+
+	}
+
+
+}

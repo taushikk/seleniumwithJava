@@ -1,0 +1,11 @@
+1588931716458	Rename compilation unit 'LoginTest.java'
+1588931743326	Copy compilation unit
+1588931932943	Extract local variable 'errorMessageText'
+1588940631428	Copy compilation unit
+1588941314550	Copy compilation unit
+1588950638363	Copy compilation unit
+1588953534744	Copy compilation unit
+1588954737645	Extract local variable 'csvFilePath'
+1588954837135	Extract method 'readFromCSV'
+1588954886413	Inline local variable 'csvFilePath'
+1589003532778	Copy compilation unit

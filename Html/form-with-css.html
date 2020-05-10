@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <title>Learn Forms in HTML with CSS</title>
+        
+        <style type="text/css">
+            label{
+                font-size: 15px;
+                color: black;
+                background-color: white;
+                <!--background-color: yellow-->            
+            }
+            
+            input, textarea, select{
+                background-color: white;
+            }
+            
+            fieldset{
+                border: 0px;
+                padding: 5px;
+            }
+            
+            ul{
+                background-color: aquamarine;
+            }
+            
+            li{
+                color: blue;
+            }
+            
+
+        </style>
+    </head>
+    
+    <body>
+        Let's get some data from user:
+        <ul>
+            <li>Text</li>
+            <li>Lot of Test - in multiple lines</li>
+            <li>Select among options</li>
+            <li>Yes or No</li>
+            <li>Click a button</li>
+        </ul>
+        <form method="post" action="accept-information.do">
+            <!--style="font-size: 25px"-->
+            <fieldset>
+                <label >User Name</label>
+                <input type="text" name="User Name" size="15" maxlength="20"/>
+                <label >Password</label>
+                <input type="Password" name="Password" size="15" maxlength="20"/> 
+            </fieldset>
+            
+            <fieldset>
+                <label >Upload Profile Picture</label>
+                <input type="file" name="Profile-Picture" />
+            </fieldset>
+            
+            <fieldset>
+                <label >First Name</label>
+                <input type="text" name="First Name" size="30" maxlength="20" value="Taushik"/>
+                <label >Age</label>
+                <input type="number" name="Age" value="30" readonly="true"/> 
+                <label >Describe Yourselves</label>
+            </fieldset>
+            <fieldset>
+                <textarea name="description" rows="5" cols="100"></textarea> 
+            </fieldset>
+            <fieldset>
+                <label>What do you want to learn?</label>
+                <input type="radio" name="what-to-learm" value="HTML">HTML
+                <input type="radio" name="what-to-learm" value="CSS" checked>CSS
+                <input type="radio" name="what-to-learm-2" value="Selenium">Selenium
+                <input type="radio" name="what-to-learm-2" value="Java">Java
+            </fieldset>
+            <fieldset>
+                <label>How do you want to learn</label>
+                    <select name="how-to-learn" multiple>
+                        <option value="online">Online</option>
+                        <option value="books">Books</option>
+                        <option value="college" selected>College</option>
+                        <option value="other">Other</option> 
+                    </select>
+            </fieldset>
+            
+            <fieldset>
+                <input type="checkbox" name="drive" checked> 
+                <label>Do you know to drive</label>
+            </fieldset>
+            <fieldset>
+                <label>Do you know to drive</label>
+                <input type="checkbox" name="drive" checked>
+            </fieldset>
+            <fieldset>
+                <label>Do you know to drive</label>
+                <select name="drive">
+                    <option value="Yes">Yes</option>
+                    <option value="No" selected>No</option>
+                </select>
+            </fieldset>
+            <input type="submit">
+          </form>
+            
+    </body>
+</html>

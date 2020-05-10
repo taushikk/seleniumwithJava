@@ -1,0 +1,9 @@
+package com.testing.webdriver.login;
+
+import org.testng.annotations.Test;
+
+public class FirstWebApplicationLoginTest {
+  @Test
+  public void f() {
+  }
+}

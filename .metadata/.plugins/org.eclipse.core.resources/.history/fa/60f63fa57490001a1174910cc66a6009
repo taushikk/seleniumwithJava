@@ -1,0 +1,23 @@
+package com.testing.webdriver.scenarios;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
+
+import com.testing.webdriver.more.AbstractChromeWebDriverTest;
+
+public class ActionBasicTest extends AbstractChromeWebDriverTest {
+	String url = "http://localhost:8081/pages/forms.html";
+	@Test
+	public void testForAlert() {
+		driver.get(url);
+		driver.manage().window().maximize();
+		WebElement element = driver.findElement(By.id("textElement"));
+		Actions actions = new Actions(driver);
+		sleep(5);
+		actions.sendKeys(element, "Test Data").perform();
+
+	}
+}
+

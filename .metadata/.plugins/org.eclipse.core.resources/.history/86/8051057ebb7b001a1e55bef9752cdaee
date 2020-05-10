@@ -1,0 +1,16 @@
+package com.in28minutes.oops;
+
+public class StringCharacters {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String biggerString = "This is very critical time due to COVID-19";
+
+		for (int i = 0; i <= biggerString.length(); i++) {
+			System.out.println(biggerString.charAt(i));
+		}
+
+	}
+
+}

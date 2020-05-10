@@ -1,0 +1,21 @@
+package com.testing.webdriver.login;
+
+import static org.testng.Assert.assertEquals;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+import com.testing.webdriver.basics.AbstractChromeWebDriverTest;
+
+public class FirstWebApplicationLoginTest extends AbstractChromeWebDriverTest {
+	String url = "http://localhost:8081/login";
+
+	@Test
+	public void login() {
+		driver.get(url);
+		assertEquals("First Web Application", driver.getTitle());
+		WebElement nameElement= driver.findElement(By.name("name"));
+		nameElement.sendKeys("in28minuts);
+	}
+}

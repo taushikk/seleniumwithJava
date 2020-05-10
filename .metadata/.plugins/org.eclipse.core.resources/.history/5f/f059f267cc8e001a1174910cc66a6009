@@ -1,0 +1,19 @@
+package com.testing.webdriver.scenarios;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotVisibleException;
+import org.testng.annotations.Test;
+
+import com.testing.webdriver.more.AbstractChromeWebDriverTest;
+
+public class PlayingWithModelWindowAndWaitsTest extends AbstractChromeWebDriverTest {
+	String url = "http://localhost:8081/pages/notifications.html";
+
+	@Test(expectedExceptions = ElementNotVisibleException.class)
+	public void playingWithModelWindows() {
+		driver.get(url);
+		driver.findElement(By.id("modalButton")).click();
+		driver.findElement(By.id("myModalCloseButton")).click();
+
+	}
+}

@@ -1,0 +1,23 @@
+package com.testing.webdriver.scenarios;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+import com.testing.webdriver.more.AbstractChromeWebDriverTest;
+
+public class JavaScriptAlertTest extends AbstractChromeWebDriverTest {
+	String url = "http://localhost:8081/pages/notifications.html";
+	@Test
+	public void testForAlert() {
+		driver.get(url);
+		driver.findElement(By.id("alertButton")).click();
+		sleep(5);
+		Alert alertQuestion = driver.switchTo().alert();
+		alertQuestion.sendKeys("Hello alert");
+		alertQuestion.accept();
+		sleep(2);
+		alertQuestion.dismiss();
+	}
+}
+

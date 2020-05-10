@@ -1,0 +1,25 @@
+package com.testing.datadriventest;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class LoginTest {
+	String url = "http://localhost:8081/login";
+
+	@Test
+	public void testLoginWithIn28minutes() {
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+		driver.get(url);
+		driver.findElement(By.id("name")).sendKeys("in28minutes");
+		driver.findElement(By.id("password")).sendKeys("dummy");
+		driver.findElement(By.id("submit")).click();
+		
+		System.out.println(driver.findElement(By.id("welcome-message")).getText());
+
+	}
+}

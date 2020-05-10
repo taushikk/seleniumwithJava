@@ -1,0 +1,10 @@
+package com.testing.webdriver.basics;
+
+import org.testng.annotations.Test;
+
+public class FormElementTextTest extends AbstractChromeWebDriverTest {
+	String url = "http://localhost:8081/pages/forms.html";
+  @Test
+  public void f() {
+  }
+}

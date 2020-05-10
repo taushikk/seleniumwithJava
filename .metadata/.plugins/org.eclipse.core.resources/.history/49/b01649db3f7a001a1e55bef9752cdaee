@@ -1,0 +1,11 @@
+package com.in28minutes.oops;
+
+public class WhileNumberPlayer {
+
+	private int limit;
+
+	public WhileNumberPlayer(int limit) {
+		this.limit= limit;
+	}
+
+}

@@ -1,0 +1,23 @@
+label{
+    font-size: 15px;
+    color: black;
+    background-color: white;
+    <!--background-color: yellow-->            
+}
+
+input, textarea, select{
+    background-color: white;
+}
+
+fieldset{
+    border: 0px;
+    padding: 5px;
+}
+
+ul{
+    background-color: aquamarine;
+}
+
+li{
+    color: blue;
+}

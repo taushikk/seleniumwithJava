@@ -1,0 +1,30 @@
+package com.testing.webdriver.basics;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
+
+public class FormElementSelectTest extends AbstractChromeWebDriverTest {
+	String url = "http://localhost:8081/pages/forms.html";
+	@Test
+	public void readvalueOfSelect() {
+		driver.get(url);
+		WebElement selectElement = driver.findElement(By.id("selectElement1"));
+		Select select = new Select(selectElement);
+		System.out.println(select.isMultiple());
+		System.out.println(select.getFirstSelectedOption().getText());
+
+	}
+
+	@Test
+	public void readvalueFromMultiSelectBox() {
+		driver.get(url);
+		WebElement selectElement = driver.findElement(By.id("selectElement1"));
+		Select select = new Select(selectElement);
+		System.out.println(select.isMultiple());
+		System.out.println(select.getFirstSelectedOption().getText());
+
+	}
+
+}

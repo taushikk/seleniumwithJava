@@ -1,0 +1,71 @@
+package com.testing.pageobjects.updatetodo;
+
+import static org.testng.Assert.assertTrue;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class UpdateToDoBasicTest {
+	String url = "http://localhost:8081/login";
+	WebDriver driver;
+	@BeforeTest
+	public void beforeTest() {
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+	}
+
+	@Test
+	public void loginPageObject() {
+
+		LoginPage page = PageFactory.initElements(driver, LoginPage.class);
+
+		// driver.findElement(By.id("name")).getAttribute("type");
+		System.out.println(page.name.getAttribute("type"));// text
+
+		// driver.findElement(By.id("password")).getAttribute("type");
+		System.out.println(page.password.getAttribute("type"));// password
+
+	}
+
+	@Test
+	public void updateToDo() {
+		driver.get(url);
+		LoginPage page = PageFactory.initElements(driver, LoginPage.class);
+		page.login("in28minutes", "dummy");
+		// page.enterName("in28minutes");
+		// page.enterPassword("dummy");
+		// page.submit();
+
+
+		String welcomeMessagetext = driver.findElement(By.id("welcome-message")).getText();
+		assertTrue(welcomeMessagetext.contains("Welcome"));
+		driver.findElement(By.linkText("Click here")).click();
+		
+		ListTodopage listTodoPage = new ListTodopage(driver);
+		listTodoPage.clickUpdateFor("10002");
+		//driver.findElement(By.id("update-10002")).click();
+
+		TodoPage todoPage = PageFactory.initElements(driver, TodoPage.class);
+		todoPage.enterDescription("updated description");
+		todoPage.enterTargetDate("10/05/2020");
+		todoPage.submit();
+
+		String updatedDesc = driver.findElement(By.id("update-10002")).getText();
+		String updatedTargetDate = driver.findElement(By.id("targetdate-10002")).getText();
+		System.out.println(updatedDesc);
+		System.out.println(updatedTargetDate);
+
+	}
+
+	@AfterTest
+	public void afterTest() {
+		driver.quit();
+	}
+}

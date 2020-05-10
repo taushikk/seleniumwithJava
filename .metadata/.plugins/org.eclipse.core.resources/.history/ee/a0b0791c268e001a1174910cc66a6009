@@ -1,0 +1,9 @@
+package com.testing.webdriver.scenarios;
+
+import org.testng.annotations.Test;
+
+public class CheckElementStylesTest {
+  @Test
+  public void f() {
+  }
+}

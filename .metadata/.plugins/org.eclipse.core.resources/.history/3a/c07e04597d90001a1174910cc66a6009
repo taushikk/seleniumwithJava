@@ -1,0 +1,9 @@
+package com.testing.selenium.crossbrowser;
+
+import org.testng.annotations.Test;
+
+public class CrossBrowserBasicTest {
+  @Test
+  public void f() {
+  }
+}

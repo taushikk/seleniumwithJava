@@ -1,0 +1,18 @@
+1588480549992	Copy compilation unit
+1588496528757	Copy compilation unit
+1588498369435	Copy compilation unit
+1588521732709	Rename local variable 'textElement'
+1588522324980	Copy compilation unit
+1588523948168	Extract local variable 'checkboxName'
+1588524009160	Extract method 'checkACheckBox'
+1588524100055	Inline local variable 'checkboxName'
+1588524792037	Copy compilation unit
+1588525251777	Extract method 'getSelectedRadioButtonValue'
+1588590268298	Extract local variable 'radioButtonName'
+1588590284338	Extract local variable 'valueToSelect'
+1588590433242	Extract method 'setRadioButtonToValue'
+1588590456176	Inline local variable 'radioButtonName'
+1588590466106	Inline local variable 'valueToSelect'
+1588593057088	Delete element
+1588593082537	Copy compilation unit
+1588609675141	Copy compilation unit

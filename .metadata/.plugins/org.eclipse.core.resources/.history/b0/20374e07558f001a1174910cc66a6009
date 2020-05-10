@@ -1,0 +1,20 @@
+package com.testing.webdriver.scenarios;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+import com.testing.webdriver.more.AbstractChromeWebDriverTest;
+
+public class NewWindowTest extends AbstractChromeWebDriverTest {
+	String url = "http://localhost:8081/pages/notifications.html";
+	@Test
+	public void testForWindows() {
+		driver.get(url);
+		driver.findElement(By.id("newPageButton")).click();
+		sleep(3);
+		System.out.println("1 - " + driver.getWindowHandle());
+		System.out.println("2 - " + driver.getWindowHandles());
+
+	}
+}
+

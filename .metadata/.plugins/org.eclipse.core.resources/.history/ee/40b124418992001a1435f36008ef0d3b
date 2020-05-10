@@ -1,0 +1,36 @@
+package com.testing.pageobjects.updatetodo;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class TodoPage {
+
+	private WebDriver driver;
+
+	public TodoPage(WebDriver driver) {
+		super();
+		this.driver = driver;
+	}
+	
+	@FindBy(id="desc")
+	WebElement description;
+	
+	@FindBy(id="targetDate")
+	WebElement targetDate;
+	
+	@FindBy(id="save")
+	WebElement saveButton;
+	
+	public void enterDescription() {
+		
+	}
+
+	public void enterTargetDate() {
+		
+	}
+	
+	public void submitTheForm() {
+		
+	}
+}

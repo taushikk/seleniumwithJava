@@ -1,0 +1,9 @@
+package com.testing.webdriver.basics;
+
+import org.testng.annotations.Test;
+
+public class FormElementTextTest {
+  @Test
+  public void f() {
+  }
+}

@@ -1,0 +1,10 @@
+package com.in28minutes.oops;
+
+public class MyNumber {
+
+	public static void main(String[] args) {
+		MyNumber number = new MyNumber();
+
+	}
+
+}

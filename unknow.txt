@@ -1,0 +1,13 @@
+one byte = 8 bit
+one short = 16 bits
+one int = 32 bits
+on long = 64 bits
+
+
+string = 16 bits
+flot = 32 bits
+double = 64 bits
+
+
+
+1174910107

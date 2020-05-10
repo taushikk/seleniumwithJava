@@ -1,0 +1,10 @@
+package com.testing.webdriver.scenarios;
+
+public class Snippet {
+	public static void main(String[] args) {
+		driver.switchTo().window(secondWindowHandle);
+		System.out.println(driver.findElement(By.tagName("h1")).getText());
+		System.out.println(driver.getCurrentUrl());
+	}
+}
+

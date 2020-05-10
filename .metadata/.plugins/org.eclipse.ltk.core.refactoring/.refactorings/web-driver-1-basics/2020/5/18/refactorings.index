@@ -1,0 +1,7 @@
+1588417771125	Rename method 'f'
+1588433817713	Rename type 'WebDriverBasicLocatorTest'
+1588433844395	Copy compilation unit
+1588435126782	Extract superclass 'AbstractWebDriverTest'
+1588435518785	Rename type 'AbstractWebDriverTest'
+1588437256031	Rename type 'WebDriverBasicLocatorWithIdTest'
+1588437270201	Rename type 'WebDriverBasicLocatorWithNameTest'

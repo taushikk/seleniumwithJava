@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>TestNG Report</title>
+<style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}.invisible {display:none}</style>
+</head>
+<body>
+<table>
+<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
+<tr><th colspan="7">First Suite</th></tr>
+<tr><td><a href="#t0">example.tests</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">17,464</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">testng</a></td><td class="num">1</td><td class="num">0</td><td class="num attn">2</td><td class="num">12,889</td><td></td><td></td></tr>
+<tr><td><a href="#t2">ChromeSpecificTests</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">11</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t3">FirefoxSpecificTests</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">6</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">4</th><th class="num">0</th><th class="num attn">2</th><th class="num">30,370</th><th colspan="2"></th></tr>
+</table>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">First Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">example.tests &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.example.tests.UntitledTestCase</td><td><a href="#m0">testUntitledTestCase</a></td><td rowspan="1">1588094299258</td><td rowspan="1">9963</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">testng &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.in28minutes.test.testng.FirstSeleniumTestNGTest</td><td><a href="#m1">testFacebookDotCom</a></td><td rowspan="1">1588094314581</td><td rowspan="1">7485</td></tr><tr class="failedodd"><td rowspan="1">com.in28minutes.test.testng.MultipleBrowserTest</td><td><a href="#m2">runInBrowser</a></td><td rowspan="1">1588094314592</td><td rowspan="1">0</td></tr><tr><th colspan="4">testng &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.in28minutes.test.testng.FirstSeleniumTestNGTest</td><td><a href="#m3">testGoogleDotCom</a></td><td rowspan="1">1588094314581</td><td rowspan="1">7495</td></tr></tbody>
+<tbody id="t2"><tr><th colspan="4">ChromeSpecificTests &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.in28minutes.test.testng.MultipleBrowserTest</td><td><a href="#m4">runInBrowser</a></td><td rowspan="1">1588094323015</td><td rowspan="1">2</td></tr></tbody>
+<tbody id="t3"><tr><th colspan="4">FirefoxSpecificTests &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.in28minutes.test.testng.MultipleBrowserTest</td><td><a href="#m5">runInBrowser</a></td><td rowspan="1">1588094323037</td><td rowspan="1">2</td></tr></tbody>
+</table>
+<h2>example.tests</h2><h3 id="m0">com.example.tests.UntitledTestCase#testUntitledTestCase</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>testng</h2><h3 id="m1">com.in28minutes.test.testng.FirstSeleniumTestNGTest#testFacebookDotCom</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [Google] but found [Facebook – log in or sign up]
+	at com.in28minutes.test.testng.FirstSeleniumTestNGTest.testFacebookDotCom(FirstSeleniumTestNGTest.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+... Removed 16 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.in28minutes.test.testng.MultipleBrowserTest#runInBrowser</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.testng.TestNGException: 
+Parameter &apos;browser&apos; is required by @Test on method runInBrowser but has not been marked @Optional or defined
+in C:\Users\tkhan\Desktop\Manual FOTA\testng-selenium-automation-tests\testng.xml
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+... Removed 9 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.in28minutes.test.testng.FirstSeleniumTestNGTest#testGoogleDotCom</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>ChromeSpecificTests</h2><h3 id="m4">com.in28minutes.test.testng.MultipleBrowserTest#runInBrowser</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>Chrome</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>FirefoxSpecificTests</h2><h3 id="m5">com.in28minutes.test.testng.MultipleBrowserTest#runInBrowser</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>Firefox</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+</body>
+</html>

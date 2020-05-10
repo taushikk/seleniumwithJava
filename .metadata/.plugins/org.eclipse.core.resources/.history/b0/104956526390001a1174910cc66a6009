@@ -1,0 +1,108 @@
+package com.testing.webdriver.scenarios;
+
+import java.io.IOException;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+import com.testing.webdriver.more.AbstractChromeWebDriverTest;
+import com.testing.webdriver.scenarios.framework.TableReader;
+
+public class ReadTablesTest extends AbstractChromeWebDriverTest {
+	String url = "http://localhost:8081/pages/tables.html";
+	@Test
+	public void testReadingOfTables() throws IOException {
+		driver.get(url);
+
+		TableReader reader = new TableReader(driver, "dataTables-example");
+		System.out.println(reader.getData(1, 2));
+		System.out.println(reader.getData(2, 2));
+		System.out.println(reader.getData(5, 4));
+		System.out.println(reader.getData(6, 3));
+		System.out.println(reader.getData(3, 3));
+
+		TableReader reader2 = new TableReader(driver, "dataTables-example-2");
+		System.out.println(reader2.getData(2, 2));
+
+	}
+
+	@Test
+	public void table() throws IOException {
+		driver.get(url);
+
+		// Get number of rows In table.
+		int Row_count = driver.findElements(By.xpath("//*[@id='dataTables-example']/tbody/tr")).size();
+		System.out.println("Number Of Rows = " + Row_count);
+
+		// Get number of columns In table.
+		int Col_count = driver.findElements(By.xpath("//*[@id='dataTables-example']/tbody/tr[1]/td")).size();
+		System.out.println("Number Of Columns = " + Col_count);
+
+		// divided xpath In three parts to pass Row_count and Col_count values.
+		String first_part = "//*[@id='dataTables-example']/tbody/tr[";
+		String second_part = "]/td[";
+		String third_part = "]";
+
+		// Used for loop for number of rows.
+		for (int i = 1; i <= Row_count; i++) {
+			// Used for loop for number of columns.
+			for (int j = 1; j <= Col_count; j++) {
+				// Prepared final xpath of specific cell as per values of i and j.
+				String final_xpath = first_part + i + second_part + j + third_part;
+				// Will retrieve value from located cell and print It.
+				String Table_data = driver.findElement(By.xpath(final_xpath)).getText();
+				System.out.print(Table_data + "  ");
+			}
+			System.out.println("");
+			System.out.println("");
+		}
+	}
+
+	@Test
+	public void table_Row_Col() throws IOException {
+		driver.get(url);
+
+		// To locate table.
+		WebElement mytable = driver.findElement(By.xpath("//*[@id='dataTables-example']"));
+
+		// To calculate no of pagination In table.
+		WebElement pagination = driver.findElement(By.id("dataTables-example_paginate"));
+		// To calculate no of rows In table.
+		List<WebElement> pagination_count = pagination.findElements(By.tagName("li"));
+		int page_number = pagination_count.size();
+		System.out.println(page_number);
+		if (page_number > 0) {
+			System.out.println("pagination exists");
+			for (int i = 2; i < page_number; i++) {
+				pagination.findElement(By.xpath("//ul[@class='pagination']/li[" + i + "]")).click();
+				sleep(3);
+			}
+		}
+
+
+		// To locate rows of table.
+		List<WebElement> rows_table = mytable.findElements(By.tagName("tr"));
+		// To calculate no of rows In table.
+		int rows_count = rows_table.size();
+		// Loop will execute till the last row of table.
+		for (int row = 0; row < rows_count; row++) {
+			// To locate columns(cells) of that specific row.
+			List<WebElement> Columns_row = rows_table.get(row).findElements(By.tagName("td"));
+			// To calculate no of columns (cells). In that specific row.
+			int columns_count = Columns_row.size();
+			System.out.println("Number of cells In Row " + row + " are " + columns_count);
+			// Loop will execute till the last cell of that specific row.
+			for (int column = 0; column < columns_count; column++) {
+				// To retrieve text from that specific cell.
+				String celtext = Columns_row.get(column).getText();
+				System.out
+				.println("Cell Value of row number " + row + " and column number " + column + " Is " + celtext);
+			}
+			System.out.println("-------------------------------------------------- ");
+		}
+	}
+
+
+}

@@ -1,0 +1,21 @@
+package com.testing.webdriver.scenarios.framework;
+
+import org.openqa.selenium.WebDriver;
+
+public class TableReader {
+
+	private WebDriver driver;
+	private String id;
+
+	public TableReader(WebDriver driver, String id) {
+		this.driver = driver;
+		this.id = id;
+
+	}
+
+	public String getData(int i, int j) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

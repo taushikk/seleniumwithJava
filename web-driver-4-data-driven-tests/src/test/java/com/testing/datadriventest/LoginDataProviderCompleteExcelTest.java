@@ -1,0 +1,53 @@
+package com.testing.datadriventest;
+
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
+import java.util.Arrays;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class LoginDataProviderCompleteExcelTest {
+	String url = "http://localhost:8081/login";
+
+	// Create the Data Provider and give the data provider a name
+	@DataProvider(name = "user-ids-password-data-provider")
+	public String[][] userIdsAndPasswordDataProvider() {
+		return ExcelReadUtil.readExcelInto2DArray(".src/test/resources/login-data.xlsx", "Sheet2", 3);
+
+	}
+	// Use the data provider
+	@Test(dataProvider = "user-ids-password-data-provider")
+	public void testLoginForAllScenarios(String userId, String password, String isLoginExpectedToBeSuccessfulString) {
+		boolean isLoginExpectedToBeSuccessful = Boolean.valueOf(isLoginExpectedToBeSuccessfulString);
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+		driver.get(url);
+		driver.findElement(By.id("name")).sendKeys(userId);
+		// driver.findElement(By.id("name")).sendKeys("in28minutes");
+		driver.findElement(By.id("password")).sendKeys(password);
+		driver.findElement(By.id("submit")).click();
+		if (isLoginExpectedToBeSuccessful) {
+			String welcomeMessagetext = driver.findElement(By.id("welcome-message")).getText();
+			assertTrue(welcomeMessagetext.contains("Welcome " + userId));
+		} else {
+			String errorMessageText = driver.findElement(By.id("error-message")).getText();
+			System.out.println(errorMessageText);
+			assertEquals(errorMessageText, "Invalid Credentials");
+		}
+		driver.quit();
+
+	}
+
+	@Test
+	public void readFromExcel() {
+		String[][] data = ExcelReadUtil.readExcelInto2DArray(".src/test/resources/login-data.xlsx", "Sheet2", 3);
+		System.out.println(Arrays.deepToString(data));
+	}
+}

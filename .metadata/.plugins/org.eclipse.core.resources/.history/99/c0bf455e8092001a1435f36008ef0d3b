@@ -1,0 +1,28 @@
+package com.testing.pageobjects.updatetodo;
+
+import org.openqa.selenium.WebElement;
+
+public class LoginPage {
+	// ********Object Available on this page******
+	// Name Text Box
+	private WebElement textBox;
+	// Password Text Box
+	private WebElement password;
+	// Submit Button
+	private WebElement submitButton;
+
+	// ************Action which we can perform
+	// enterName
+	public void enterName(String name) {
+
+	}
+	// enterPassword
+	public void enterPassword(String password) {
+
+	}
+	// submit
+	public void submit() {
+
+	}
+
+}

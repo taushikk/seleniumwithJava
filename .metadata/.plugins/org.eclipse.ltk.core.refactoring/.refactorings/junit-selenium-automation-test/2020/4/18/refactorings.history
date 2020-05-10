@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;FirstSeleniumJUnitTest.java&apos; to &apos;testng-selenium-automation-tests/src/test/java&apos;&#x0D;&#x0A;- Original project: &apos;junit-selenium-automation-test&apos;&#x0D;&#x0A;- Destination element: &apos;testng-selenium-automation-tests/src/test/java&apos;&#x0D;&#x0A;- Original element: &apos;com.in28minutes.tests.FirstSeleniumJUnitTest.java&apos;" description="Copy compilation unit" destination="=testng-selenium-automation-tests/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/" element1="/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/&lt;com.in28minutes.tests{FirstSeleniumJUnitTest.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1588090251991" units="1" version="1.0"/>
+</session>

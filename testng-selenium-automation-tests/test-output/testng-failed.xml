@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [First Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" parallel="methods" name="testng(failed)">
+    <classes>
+      <class name="com.in28minutes.test.testng.FirstSeleniumTestNGTest">
+        <methods>
+          <include name="testFacebookDotCom"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class> <!-- com.in28minutes.test.testng.FirstSeleniumTestNGTest -->
+      <class name="com.in28minutes.test.testng.MultipleBrowserTest">
+        <methods>
+          <include name="runInBrowser"/>
+        </methods>
+      </class> <!-- com.in28minutes.test.testng.MultipleBrowserTest -->
+    </classes>
+  </test> <!-- testng(failed) -->
+</suite> <!-- Failed suite [First Suite] -->

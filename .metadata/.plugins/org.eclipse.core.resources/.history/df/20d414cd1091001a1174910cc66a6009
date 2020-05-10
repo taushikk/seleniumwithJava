@@ -1,0 +1,17 @@
+package com.testing.datadriventest;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class LoginTest {
+	String url = "http://localhost:8081/login";	
+  @Test
+  public void f() {
+	  WebDriverManager.chromedriver().setup();
+	  WebDriver driver = new ChromeDriver();
+	  driver.get(url);
+	 
+  }
+}

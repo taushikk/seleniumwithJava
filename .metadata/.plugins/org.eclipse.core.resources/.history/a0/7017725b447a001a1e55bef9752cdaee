@@ -1,0 +1,15 @@
+package com.in28minutes.oops;
+
+import java.util.Scanner;
+
+public class DoWhileRepeatedQuestionRunner {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter the number: ");
+		int number = scanner.nextInt();
+		System.out.println("Cube is " + number * number * number);
+
+	}
+
+}
