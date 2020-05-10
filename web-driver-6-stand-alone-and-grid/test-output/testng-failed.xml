@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.testing.SeleniumStandAloneTest">
+      <class name="com.testing.SeleniumHubTest">
         <methods>
-          <include name="standalone"/>
+          <include name="hub_firefox"/>
         </methods>
-      </class> <!-- com.testing.SeleniumStandAloneTest -->
+      </class> <!-- com.testing.SeleniumHubTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
